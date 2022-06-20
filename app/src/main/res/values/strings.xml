@@ -18,4 +18,11 @@
     <string name="subtraction">-</string>
     <string name="multiplication">*</string>
     <string name="division">/</string>
+    <string name="exponent">^</string>
+    <string name="decimal">.</string>
+    <string name="clear">C</string>
+    <string name="delete"> &lt;</string>
+    <string name="equation">=</string>
+    <string name="left_paren">(</string>
+    <string name="right_paren">)</string>
 </resources>
