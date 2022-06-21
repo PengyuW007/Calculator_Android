@@ -16,8 +16,8 @@
     <!-- Operators -->
     <string name="addition">+</string>
     <string name="subtraction">-</string>
-    <string name="multiplication">*</string>
-    <string name="division">/</string>
+    <string name="multiplication">×</string>
+    <string name="division">÷</string>
     <string name="exponent">^</string>
     <string name="decimal">.</string>
     <string name="clear">C</string>
@@ -25,4 +25,7 @@
     <string name="equation">=</string>
     <string name="left_paren">(</string>
     <string name="right_paren">)</string>
+    <string name="factorial">!</string>
+    <string name="log">㏒</string>
+    <string name="ln">㏑</string>
 </resources>
