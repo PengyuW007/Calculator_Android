@@ -28,4 +28,7 @@
     <string name="factorial">!</string>
     <string name="log">㏒</string>
     <string name="ln">㏑</string>
+    <string name="percentage">%</string>
+
+    <string name="display">Enter a value</string>
 </resources>
