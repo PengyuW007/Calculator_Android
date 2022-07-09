@@ -350,6 +350,7 @@
 
     <Button
         android:id="@+id/button26"
+
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -363,5 +364,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp"
-        android:backgroundTint="#43A047"/>
+        android:backgroundTint="#43A047"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
