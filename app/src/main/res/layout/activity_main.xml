@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/white"
     tools:context=".presentation.MainActivity">
 
     <TableLayout
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button20"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -33,7 +33,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button19"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -45,7 +45,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button18"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -57,7 +57,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button17"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -65,16 +65,16 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
-                android:text="@string/delete"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:srcCompat="@drawable/delete_shape" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button4"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -86,7 +86,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button3"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -98,7 +98,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button2"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -111,7 +111,7 @@
                 android:textSize="20sp" />
 
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -128,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button8"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -138,9 +138,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/four"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button7"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -150,9 +150,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/five"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button6"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -162,9 +162,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/six"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button5"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -174,14 +174,14 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/subtraction"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button12"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -191,9 +191,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/seven"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button11"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -203,9 +203,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/eight"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button10"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -215,9 +215,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/nine"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button9"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -227,14 +227,14 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/multiplication"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button16"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -244,9 +244,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/log"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button15"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -256,9 +256,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/zero"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button14"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -268,9 +268,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/exponent"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button13"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -280,14 +280,14 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/division"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button24"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -297,9 +297,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/ln"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button23"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -309,9 +309,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/decimal"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button22"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -321,9 +321,9 @@
                 android:background="@drawable/button_shape"
                 android:text="@string/percentage"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button21"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
@@ -331,24 +331,29 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:backgroundTint="#4CAF50"
                 android:text="@string/equation"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
         </TableRow>
 
     </TableLayout>
 
-    <TextView
+    <EditText
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/display"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="none"
+        android:textSize="30sp"
+        android:textAlignment="textEnd"
+        />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button26"
 
         style="@style/Widget.AppCompat.Button.Borderless"
@@ -357,13 +362,12 @@
         android:layout_margin="5dp"
         android:layout_weight="1"
         android:background="@drawable/button_shape"
+        android:backgroundTint="#DC4414"
         android:text="@string/clear"
         android:textColor="@android:color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
-        android:backgroundTint="#43A047"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
