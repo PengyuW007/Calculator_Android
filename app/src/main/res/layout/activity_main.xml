@@ -29,6 +29,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="left_para"
                 android:text="@string/left_paren"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -41,6 +42,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="right_para"
                 android:text="@string/right_paren"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -53,6 +55,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="fractional"
                 android:text="@string/factorial"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -65,6 +68,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="delete"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 app:srcCompat="@drawable/delete_shape" />
@@ -82,6 +86,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="one"
                 android:text="@string/one"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -94,6 +99,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="two"
                 android:text="@string/two"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -106,6 +112,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="three"
                 android:text="@string/three"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -119,6 +126,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="addition"
                 android:text="@string/addition"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -136,6 +144,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="four"
                 android:text="@string/four"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -148,6 +157,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="five"
                 android:text="@string/five"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -160,6 +170,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="six"
                 android:text="@string/six"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -172,6 +183,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="subtraction"
                 android:text="@string/subtraction"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -189,6 +201,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="seven"
                 android:text="@string/seven"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -201,6 +214,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="eight"
                 android:text="@string/eight"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -213,6 +227,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="nine"
                 android:text="@string/nine"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -225,6 +240,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="multiplication"
                 android:text="@string/multiplication"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -242,6 +258,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="log"
                 android:text="@string/log"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -254,7 +271,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
-                android:onClick="@"
+                android:onClick="zero"
                 android:text="@string/zero"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -267,6 +284,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="power"
                 android:text="@string/exponent"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -279,6 +297,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="division"
                 android:text="@string/division"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -296,6 +315,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="ln"
                 android:text="@string/ln"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -308,6 +328,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="decimal"
                 android:text="@string/decimal"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -320,6 +341,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
+                android:onClick="percentage"
                 android:text="@string/percentage"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -333,6 +355,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
                 android:backgroundTint="#4CAF50"
+                android:onClick="equation"
                 android:text="@string/equation"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -364,6 +387,7 @@
         android:layout_weight="1"
         android:background="@drawable/button_shape"
         android:backgroundTint="#DC4414"
+        android:onClick="clear"
         android:text="@string/clear"
         android:textColor="@android:color/black"
         android:textSize="20sp"
