@@ -10,7 +10,7 @@ Android Studio
 2. SDK: Android(Marshmallow 6.0)
 
 ### Packages
-1. [MathParser](https://mathparser.org/):Do calculations.
+1. [MathParser](https://mathparser.org/): Do calculations.
 
 ## Implementation
 1. Numbers
