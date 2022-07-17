@@ -22,10 +22,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**** To make default keyboard invisible ***/
         text = findViewById(R.id.textView2);
-        //text.setShowSoftInputOnFocus(false);
         text.setInputType(InputType.TYPE_NULL);
+        /******************************************/
 
+        /**** *********Enter text console *********/
         text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }//end onCreate
 
+    /****** Text Editor/ Number needs to be calculated ****/
     private void updateText(String newStr) {
         String oldStr = text.getText().toString();
         int cur = text.getSelectionStart();
@@ -48,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
             text.setText(leftStr + newStr + rightStr);
         }
         text.setSelection(cur + 1);
-    }
+    }//end updateText
 
-
-    /*********
-     * Numbers
-     *********/
+    /******************************************************************************
+     *** These(Numbers/Functions) will be used in res/layout/activity_main.xml ****
+     ******************************************************************************/
+    /********* Numbers *********/
     public void zero(View view) {
         updateText("0");
     }//end zero
@@ -94,9 +97,7 @@ public class MainActivity extends AppCompatActivity {
         updateText("9");
     }
 
-    /*************
-     * Functions
-     ************/
+    /******* Functions **********/
     public void clear(View view) {
         text.setText("");
     }
@@ -178,3 +179,4 @@ public class MainActivity extends AppCompatActivity {
         text.setSelection(result.length());
     }
 }
+/*********************************************************/
