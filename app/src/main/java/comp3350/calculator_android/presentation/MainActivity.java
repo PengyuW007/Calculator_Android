@@ -239,6 +239,17 @@ public class MainActivity extends AppCompatActivity {
         historyAdapter.notifyDataSetChanged();
     }
 
+    public void clearHistory(View view) {
+        // Clear the history list
+        historyList.clear();
+        historyAdapter.notifyDataSetChanged();
+
+        // Clear SharedPreferences storage
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("history");
+        editor.apply();
+    }
+
     public void toggleHistory(View view) {
         // Toggle visibility of RecyclerView
         if (historyRecyclerView.getVisibility() == View.GONE) {
