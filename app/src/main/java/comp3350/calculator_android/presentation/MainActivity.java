@@ -1,13 +1,23 @@
 package comp3350.calculator_android.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.view.View;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.mariuszgromada.math.mxparser.*;
 
@@ -16,11 +26,18 @@ import comp3350.calculator_android.R;
 public class MainActivity extends AppCompatActivity {
 
     private EditText text;
+    private RecyclerView historyRecyclerView;
+    private HistoryAdapter historyAdapter;
+    private List<String> historyList = new ArrayList<>();
+    private boolean isHistoryVisible = false;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sharedPreferences = getSharedPreferences("CalculatorHistory", MODE_PRIVATE);
 
         /**** To make default keyboard invisible ***/
         text = findViewById(R.id.textView2);
@@ -36,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        historyRecyclerView = findViewById(R.id.historyRecyclerView);
+        historyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Set initial adapter with empty history
+        historyAdapter = new HistoryAdapter(historyList);
+        historyRecyclerView.setAdapter(historyAdapter);
     }//end onCreate
 
     /****** Text Editor/ Number needs to be calculated ****/
@@ -124,9 +148,6 @@ public class MainActivity extends AppCompatActivity {
             text.setText(selection);
             text.setSelection(curr - 1);
         }
-
-//        int curr = text.getSelectionStart();
-//        int len = text.getText().length();
     }
 
     public void addition(View view) {
@@ -175,8 +196,45 @@ public class MainActivity extends AppCompatActivity {
 
         String result = String.valueOf(expression.calculate());
 
+        // Add result to history
+        historyList.add(userExp + " = " + result);
+        historyAdapter.notifyDataSetChanged(); // Refresh RecyclerView
+
         text.setText(result);
         text.setSelection(result.length());
+    }
+
+    public void toggleHistory(View view) {
+        // Toggle visibility of RecyclerView
+        if (historyRecyclerView.getVisibility() == View.GONE) {
+            historyRecyclerView.setVisibility(View.VISIBLE);
+        } else {
+            historyRecyclerView.setVisibility(View.GONE);
+        }
+    }
+
+    // Save and Load History Using SharedPreferences
+    private void saveHistory(String calculation) {
+        historyList.add(0, calculation); // Add latest at top
+        if (historyList.size() > 10) { // Limit history to last 10 entries
+            historyList.remove(historyList.size() - 1);
+        }
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Set<String> set = new HashSet<>(historyList);
+        editor.putStringSet("history", set);
+        editor.apply();
+
+        historyAdapter.notifyDataSetChanged();
+    }
+
+    private Set<String> loadHistory() {
+        return sharedPreferences.getStringSet("history", new HashSet<>());
+    }
+    public void clearHistory(View view) {
+        historyList.clear();
+        sharedPreferences.edit().remove("history").apply();
+        historyAdapter.notifyDataSetChanged();
     }
 }
 /*********************************************************/
