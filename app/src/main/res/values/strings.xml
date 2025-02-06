@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Calculator_Android</string>
+    <string name="app_name">SnapCal</string>
 
     <!-- Numbers -->
     <string name="one">1</string>
