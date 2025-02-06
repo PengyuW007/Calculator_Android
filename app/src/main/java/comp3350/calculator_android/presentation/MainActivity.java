@@ -56,7 +56,17 @@ public class MainActivity extends AppCompatActivity {
         historyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Set initial adapter with empty history
-        historyAdapter = new HistoryAdapter(historyList);
+        historyAdapter = new HistoryAdapter(historyList, new HistoryAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(String item) {
+                // Extract the expression from "expression = result" format
+                if (item.contains("=")) {
+                    String expression = item.split("=")[0].trim();
+                    text.setText(expression);
+                    text.setSelection(expression.length()); // Move cursor to the end
+                }
+            }
+        });
         historyRecyclerView.setAdapter(historyAdapter);
 
         // Load history from SharedPreferences

@@ -10,10 +10,16 @@ import java.util.List;
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
 
     private List<String> historyList;
+    private OnItemClickListener listener;
+
+    public interface OnItemClickListener {
+        void onItemClick(String item);
+    }
 
     // Constructor to initialize the history list
-    public HistoryAdapter(List<String> historyList) {
+    public HistoryAdapter(List<String> historyList, OnItemClickListener listener) {
         this.historyList = historyList;
+        this.listener = listener;
     }
 
     // ViewHolder class to hold the views
@@ -36,8 +42,10 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     @Override
     public void onBindViewHolder(HistoryViewHolder holder, int position) {
+        String historyItem = historyList.get(position);
         // Bind the data to the ViewHolder
         holder.historyItemText.setText(historyList.get(position));
+        holder.itemView.setOnClickListener(v -> listener.onItemClick(historyItem));
     }
 
     @Override
