@@ -1,5 +1,7 @@
 package comp3350.calculator_android.presentation;
 
+import comp3350.calculator_android.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,21 +9,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.view.View;
-import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.mariuszgromada.math.mxparser.*;
-
-import comp3350.calculator_android.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -60,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
         // Set initial adapter with empty history
         historyAdapter = new HistoryAdapter(historyList);
         historyRecyclerView.setAdapter(historyAdapter);
+
+        // Load history from SharedPreferences
+        Set<String> historySet = loadHistory();
+        historyList.addAll(historySet);
+        Collections.reverse(historyList);
+        historyAdapter.notifyDataSetChanged();
     }//end onCreate
 
     /****** Text Editor/ Number needs to be calculated ****/
@@ -197,11 +201,32 @@ public class MainActivity extends AppCompatActivity {
         String result = String.valueOf(expression.calculate());
 
         // Add result to history
-        historyList.add(userExp + " = " + result);
-        historyAdapter.notifyDataSetChanged(); // Refresh RecyclerView
+        String calculation = userExp + " = " + result;
+        saveHistory(calculation); // Save to history
 
         text.setText(result);
         text.setSelection(result.length());
+    }
+
+    /****** Save History in SharedPreferences ******/
+    private void saveHistory(String calculation) {
+        // Add latest calculation to the front of the list (to show at top)
+        historyList.add(0, calculation);
+        if (historyList.size() > 10) {
+            historyList.remove(historyList.size() - 1); // Keep only last 10 entries
+        }
+
+        // Reverse the list before saving to SharedPreferences (latest on top)
+        //Collections.reverse(historyList);
+
+        // Save to SharedPreferences
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Set<String> set = new HashSet<>(historyList);
+        editor.putStringSet("history", set);
+        editor.apply(); // Save changes
+
+        // Refresh RecyclerView
+        historyAdapter.notifyDataSetChanged();
     }
 
     public void toggleHistory(View view) {
@@ -213,28 +238,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Save and Load History Using SharedPreferences
-    private void saveHistory(String calculation) {
-        historyList.add(0, calculation); // Add latest at top
-        if (historyList.size() > 10) { // Limit history to last 10 entries
-            historyList.remove(historyList.size() - 1);
-        }
-
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        Set<String> set = new HashSet<>(historyList);
-        editor.putStringSet("history", set);
-        editor.apply();
-
-        historyAdapter.notifyDataSetChanged();
-    }
-
     private Set<String> loadHistory() {
         return sharedPreferences.getStringSet("history", new HashSet<>());
-    }
-    public void clearHistory(View view) {
-        historyList.clear();
-        sharedPreferences.edit().remove("history").apply();
-        historyAdapter.notifyDataSetChanged();
     }
 }
 /*********************************************************/
