@@ -407,19 +407,19 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/historyButton"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="5dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/history_check_shape"
+        android:contentDescription="@android:string/search_go"
         android:onClick="toggleHistory"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/history_check_shape"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/historyRecyclerView"
