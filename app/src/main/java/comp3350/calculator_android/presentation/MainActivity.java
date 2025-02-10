@@ -78,18 +78,32 @@ public class MainActivity extends AppCompatActivity {
 
     /****** Text Editor/ Number needs to be calculated ****/
     private void updateText(String newStr) {
+        if ("Invalid values".equals(text.getText().toString())) {
+            text.setText(""); // Clear the invalid message
+            text.setTag(null); // Reset the tag
+        }
+
         String oldStr = text.getText().toString();
         int cur = text.getSelectionStart();
         String leftStr = oldStr.substring(0, cur);
         String rightStr = oldStr.substring(cur);
-        //text.setText(String.format("%s%s%s", leftStr, newStr, rightStr));
-        if (getString(R.string.display).equals(text.getText().toString())) {
-            text.setText(newStr);
-        } else {
-            text.setText(leftStr + newStr + rightStr);
-        }
+
+        text.setText(leftStr + newStr + rightStr);
         text.setSelection(cur + 1);
     }//end updateText
+
+    // Helper method to check if a string is a number (a previous result)
+    private boolean isNumeric(String str) {
+        if (str == null || str.isEmpty()) {
+            return false;
+        }
+        try {
+            Double.parseDouble(str); // Try parsing as a number
+            return true; // It is a previous numeric result
+        } catch (NumberFormatException e) {
+            return false; // Not a numeric result
+        }
+    }
 
     /******************************************************************************
      *** These(Numbers/Functions) will be used in res/layout/activity_main.xml ****
@@ -207,13 +221,24 @@ public class MainActivity extends AppCompatActivity {
         userExp = userExp.replaceAll("×","*");
 
         Expression expression = new Expression(userExp);
+        double resultVal = expression.calculate();
+        String result;
 
-        String result = String.valueOf(expression.calculate());
-
-        // Add result to history
-        String calculation = userExp + " = " + result;
-        saveHistory(calculation); // Save to history
-
+        if(Double.isNaN(resultVal)){
+            result = "Invalid values";
+            text.setTag("invalid");
+        }else{
+            // If the result is a whole number, display it as an integer
+            if (resultVal == Math.floor(resultVal)) {
+                result = String.valueOf((int) resultVal);
+            } else {
+                result = String.valueOf(resultVal);
+            }
+            // Add result to history
+            String calculation = userExp + " = " + result;
+            saveHistory(calculation); // Save to history
+            text.setTag(null);
+        }
         text.setText(result);
         text.setSelection(result.length());
     }
@@ -262,5 +287,7 @@ public class MainActivity extends AppCompatActivity {
     private Set<String> loadHistory() {
         return sharedPreferences.getStringSet("history", new HashSet<>());
     }
+
+
 }
 /*********************************************************/
